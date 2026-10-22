@@ -94,7 +94,6 @@ $("formLogin").addEventListener("submit", (e) => {
   sessionStorage.setItem(CLAVE_SESION, JSON.stringify({ nick: usuario.nick, nombre: usuario.nombre, rol }));
   mostrarMensaje(form, `Bienvenido, ${usuario.nombre}. Entraste como ${rol}.`, "ok");
 
-  // Redirección según el rol (cuando existan las otras páginas, agrega sus rutas aquí)
   const destinos = {
     comprador: "./catalogo/catalogo.html",
     vendedor: "./vendedor/vendedor.html",
