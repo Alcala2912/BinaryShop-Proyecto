@@ -98,7 +98,7 @@ $("formLogin").addEventListener("submit", (e) => {
   const destinos = {
     comprador: "./catalogo/catalogo.html",
     vendedor: "./vendedor/vendedor.html",
-    administrador: "../admin/admin.html"
+    administrador: "./admin/admin.html"
   };
   if (destinos[rol]) setTimeout(() => (window.location.href = destinos[rol]), 800);
 });
