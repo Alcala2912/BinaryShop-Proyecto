@@ -9,24 +9,30 @@
 <div class="pagina">
 
   <header class="barra">
-    <div class="logo"><span class="logo-bits">01</span><span>BinaryShop</span></div>
-    <div class="acciones">
-      <span id="saludo"></span>
-      <div class="carrito-caja">
-        <button type="button" id="btnCarrito" class="btn-carrito" aria-expanded="false">Carrito (<span id="conteo">0</span>)</button>
-        <div id="desplegable" class="desplegable" hidden>
-          <ul id="listaCarrito"></ul>
-          <p id="carritoVacio" class="vacio">Tu carrito está vacío.</p>
-          <div id="pieCarrito" class="pie-carrito" hidden>
-            <p class="total">Total: <b id="totalCarrito">$0.00</b></p>
-            <button type="button" id="btnFinalizar" class="boton">Finalizar compra</button>
-            <button type="button" id="btnVaciar" class="enlace">Vaciar carrito</button>
-          </div>
+  <div class="logo"><span class="logo-bits">01</span><span>BinaryShop</span></div>
+  <div class="acciones">
+    <span id="saludo"></span>
+    
+    <!-- Enlace dinámico para regresar al panel según el rol -->
+    <a href="#" id="btnPanel" class="enlace" hidden>Mi Panel</a>
+
+    <div class="carrito-caja">
+      <button type="button" id="btnCarrito" class="btn-carrito" aria-expanded="false">
+        Carrito (<span id="conteo">0</span>)
+      </button>
+      <div id="desplegable" class="desplegable" hidden>
+        <ul id="listaCarrito"></ul>
+        <p id="carritoVacio" class="vacio">Tu carrito está vacío.</p>
+        <div id="pieCarrito" class="pie-carrito" hidden>
+          <p class="total">Total: <b id="totalCarrito">$0.00</b></p>
+          <button type="button" id="btnFinalizar" class="boton">Finalizar compra</button>
+          <button type="button" id="btnVaciar" class="enlace">Vaciar carrito</button>
         </div>
       </div>
-      <button type="button" id="btnSalir" class="enlace">Cerrar sesión</button>
     </div>
-  </header>
+    <button type="button" id="btnSalir" class="enlace">Cerrar sesión</button>
+  </div>
+</header>
 
   <main>
     <div class="titulo">
