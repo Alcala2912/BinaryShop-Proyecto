@@ -96,7 +96,7 @@ $("formLogin").addEventListener("submit", (e) => {
 
   // Redirección según el rol (cuando existan las otras páginas, agrega sus rutas aquí)
   const destinos = {
-    comprador: "catalogo/catalogo.html"
+    comprador: "./catalogo/catalogo.html"
     // vendedor: "../vendedor/vendedor.html",
     // administrador: "../admin/admin.html"
   };
