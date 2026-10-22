@@ -95,7 +95,7 @@ $("formLogin").addEventListener("submit", (e) => {
   mostrarMensaje(form, `Bienvenido, ${usuario.nombre}. Entraste como ${rol}.`, "ok");
 
   const destinos = {
-    comprador: "catalogo/catalogo.html",
+    comprador: "catalogo/calogo.html",
     vendedor: "vendedor/vendedor.html",
     administrador: "admin/admin.html"
   };
