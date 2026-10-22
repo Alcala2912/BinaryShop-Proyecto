@@ -1,0 +1,81 @@
+:root {
+  --fondo: #e8edf4;
+  --tinta: #14213d;
+  --suave: #5a6779;
+  --linea: #c8d2df;
+  --acento: #1f4fd8;
+  --bit: #f2a900;
+  --error: #b83227;
+  --ok: #1c7a45;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Todo sobre un solo fondo, centrado */
+.pagina { width: 560px; margin: 0 auto; padding: 40px 0; }
+
+.marca { text-align: center; margin-bottom: 28px; }
+.logo { display: flex; justify-content: center; align-items: center; gap: 10px; font-size: 1.8rem; font-weight: 700; }
+.logo-bits {
+  font-family: Consolas, "Courier New", monospace;
+  background: var(--bit);
+  color: var(--tinta);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.lema { margin: 8px 0 0; color: var(--suave); }
+
+/* Pestañas */
+.pestanas { display: flex; gap: 6px; margin-bottom: 24px; border-bottom: 2px solid var(--linea); }
+.pestanas button {
+  background: none; border: 0; padding: 10px 14px;
+  font-size: 1rem; font-weight: 600; color: var(--suave);
+  cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -2px;
+}
+.pestanas button.activa { color: var(--acento); border-bottom-color: var(--acento); }
+
+/* Formularios */
+.fila { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.campo { margin-bottom: 14px; }
+label { display: block; font-size: .9rem; margin-bottom: 5px; }
+input:not([type="radio"]), select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1.5px solid var(--linea);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--tinta);
+}
+input:focus-visible, select:focus-visible, button:focus-visible {
+  outline: 3px solid rgba(31, 79, 216, .35);
+  border-color: var(--acento);
+}
+input.invalido { border-color: var(--error); }
+.error { margin: 4px 0 0; min-height: 1.1em; font-size: .8rem; color: var(--error); }
+
+fieldset { border: 1.5px solid var(--linea); border-radius: 10px; padding: 12px 14px 4px; margin: 0 0 16px; }
+legend { padding: 0 6px; font-size: .9rem; font-weight: 600; }
+.opcion { display: inline-flex; align-items: center; gap: 6px; margin-right: 18px; }
+.ayuda { font-size: .82rem; color: var(--suave); line-height: 1.4; margin: 10px 0; }
+
+.boton {
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--acento);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.mensaje { margin: 12px 0 0; min-height: 1.2em; text-align: center; font-size: .92rem; }
+.mensaje.ok { color: var(--ok); }
+.mensaje.mal { color: var(--error); }

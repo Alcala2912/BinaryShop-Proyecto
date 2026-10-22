@@ -1,0 +1,103 @@
+:root {
+  --fondo: #e8edf4;
+  --tinta: #14213d;
+  --suave: #5a6779;
+  --linea: #c8d2df;
+  --acento: #1f4fd8;
+  --bit: #f2a900;
+  --error: #b83227;
+  --ok: #1c7a45;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.pagina { width: 980px; margin: 0 auto; padding: 24px 0 48px; }
+
+/* Barra superior */
+.barra { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+.logo { display: flex; align-items: center; gap: 10px; font-size: 1.6rem; font-weight: 700; }
+.logo-bits {
+  font-family: Consolas, "Courier New", monospace;
+  background: var(--bit);
+  color: var(--tinta);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.acciones { display: flex; align-items: center; gap: 16px; }
+#saludo { color: var(--suave); font-size: .95rem; }
+
+button { font-family: inherit; }
+button:focus-visible, input:focus-visible {
+  outline: 3px solid rgba(31, 79, 216, .35);
+}
+.enlace {
+  background: none; border: 0; color: var(--acento);
+  font-size: .9rem; font-weight: 600; cursor: pointer; padding: 4px 0;
+}
+.boton {
+  width: 100%; padding: 10px; border: 0; border-radius: 8px;
+  background: var(--acento); color: #fff;
+  font-size: .95rem; font-weight: 600; cursor: pointer;
+}
+.boton.secundario {
+  background: #fff; color: var(--acento); border: 1.5px solid var(--acento);
+}
+
+/* Carrito */
+.carrito-caja { position: relative; }
+.btn-carrito {
+  background: var(--tinta); color: #fff; border: 0; border-radius: 8px;
+  padding: 9px 16px; font-size: .95rem; font-weight: 600; cursor: pointer;
+}
+.desplegable {
+  position: absolute; right: 0; top: calc(100% + 8px); z-index: 10;
+  width: 360px; background: #fff; border: 1.5px solid var(--linea);
+  border-radius: 12px; padding: 14px; box-shadow: 0 10px 30px rgba(20, 33, 61, .18);
+}
+.desplegable ul { list-style: none; margin: 0; padding: 0; max-height: 280px; overflow-y: auto; }
+.item-carrito {
+  display: grid; grid-template-columns: 1fr auto; gap: 4px 10px;
+  padding: 10px 0; border-bottom: 1px solid var(--linea);
+}
+.item-carrito .nombre { font-weight: 600; font-size: .92rem; }
+.item-carrito .subtotal { font-weight: 600; font-size: .92rem; text-align: right; }
+.cantidad { display: flex; align-items: center; gap: 8px; font-size: .88rem; color: var(--suave); }
+.cantidad button {
+  width: 26px; height: 26px; border: 1.5px solid var(--linea); border-radius: 6px;
+  background: #fff; cursor: pointer; font-size: 1rem; line-height: 1;
+}
+.item-carrito .quitar { justify-self: end; }
+.pie-carrito { margin-top: 12px; }
+.total { margin: 0 0 10px; text-align: right; font-size: 1.05rem; }
+
+/* Catálogo */
+.titulo { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+h1 { margin: 0; font-size: 1.6rem; }
+#buscador {
+  width: 260px; padding: 9px 12px; font-size: .95rem;
+  border: 1.5px solid var(--linea); border-radius: 8px; background: #fff; color: var(--tinta);
+}
+.aviso { min-height: 1.3em; margin: 0 0 10px; font-size: .92rem; color: var(--ok); }
+.aviso.mal { color: var(--error); }
+.vacio { color: var(--suave); font-size: .92rem; }
+
+.catalogo { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.tarjeta {
+  background: #fff; border: 1.5px solid var(--linea); border-radius: 12px;
+  overflow: hidden; display: flex; flex-direction: column;
+}
+.tarjeta img { width: 100%; height: 150px; object-fit: cover; display: block; background: var(--fondo); }
+.tarjeta .cuerpo { padding: 12px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.tarjeta h2 { margin: 0; font-size: 1rem; }
+.tarjeta .precio { margin: 0; font-size: 1.2rem; font-weight: 700; color: var(--acento); }
+.tarjeta .botones { margin-top: auto; display: flex; flex-direction: column; gap: 8px; }
+.ver-carrito {
+  display: block; text-align: center; text-decoration: none; margin-bottom: 8px;
+  padding: 10px; border-radius: 8px; border: 1.5px solid var(--acento);
+  color: var(--acento); font-weight: 600; font-size: .95rem;
+}

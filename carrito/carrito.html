@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>BinaryShop | Carrito</title>
+<link rel="stylesheet" href="carrito.css">
+</head>
+<body>
+<div class="pagina">
+
+  <header class="barra">
+    <div class="logo"><span class="logo-bits">01</span><span>BinaryShop</span></div>
+    <div class="acciones">
+      <span id="saludo"></span>
+      <a class="enlace" href="../catalogo/catalogo.html">← Seguir comprando</a>
+      <button type="button" id="btnSalir" class="enlace">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main>
+    <h1>Carrito de compras</h1>
+    <p id="aviso" class="aviso" role="status"></p>
+
+    <div id="contenido" class="contenido">
+      <ul id="lista" class="lista"></ul>
+
+      <aside class="resumen">
+        <h2>Resumen</h2>
+        <p>Artículos: <b id="unidades">0</b></p>
+        <p class="total">Total: <b id="total">$0.00</b></p>
+        <p id="pago" class="ayuda"></p>
+        <button type="button" id="btnFinalizar" class="boton">Finalizar compra</button>
+        <button type="button" id="btnVaciar" class="enlace">Vaciar carrito</button>
+      </aside>
+    </div>
+
+    <div id="vacio" class="vacio-caja" hidden>
+      <p>Tu carrito está vacío.</p>
+      <a class="boton enlace-boton" href="../catalogo/catalogo.html">Ir al catálogo</a>
+    </div>
+  </main>
+
+</div>
+<script src="../compartido/datos.js"></script>
+<script src="carrito.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>BinaryShop | Catálogo</title>
+<link rel="stylesheet" href="catalogo.css">
+</head>
+<body>
+<div class="pagina">
+
+  <header class="barra">
+    <div class="logo"><span class="logo-bits">01</span><span>BinaryShop</span></div>
+    <div class="acciones">
+      <span id="saludo"></span>
+      <div class="carrito-caja">
+        <button type="button" id="btnCarrito" class="btn-carrito" aria-expanded="false">Carrito (<span id="conteo">0</span>)</button>
+        <div id="desplegable" class="desplegable" hidden>
+          <ul id="listaCarrito"></ul>
+          <p id="carritoVacio" class="vacio">Tu carrito está vacío.</p>
+          <div id="pieCarrito" class="pie-carrito" hidden>
+            <p class="total">Total: <b id="totalCarrito">$0.00</b></p>
+            <button type="button" id="btnFinalizar" class="boton">Finalizar compra</button>
+            <button type="button" id="btnVaciar" class="enlace">Vaciar carrito</button>
+          </div>
+        </div>
+      </div>
+      <button type="button" id="btnSalir" class="enlace">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="titulo">
+      <h1>Catálogo</h1>
+      <input type="search" id="buscador" placeholder="Buscar producto">
+    </div>
+    <p id="aviso" class="aviso" role="status"></p>
+    <div id="catalogo" class="catalogo"></div>
+    <p id="sinResultados" class="vacio" hidden>No hay productos que coincidan con tu búsqueda.</p>
+  </main>
+
+</div>
+<script src="catalogo.js"></script>
+</body>
+</html>
