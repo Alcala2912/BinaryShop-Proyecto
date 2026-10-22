@@ -1,0 +1,76 @@
+:root {
+  --fondo: #e8edf4;
+  --tinta: #14213d;
+  --suave: #5a6779;
+  --linea: #c8d2df;
+  --acento: #1f4fd8;
+  --bit: #f2a900;
+  --error: #b83227;
+  --ok: #1c7a45;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.pagina { width: 980px; margin: 0 auto; padding: 24px 0 48px; }
+
+.barra { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+.logo { display: flex; align-items: center; gap: 10px; font-size: 1.6rem; font-weight: 700; }
+.logo-bits {
+  font-family: Consolas, "Courier New", monospace;
+  background: var(--bit);
+  color: var(--tinta);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.acciones { display: flex; align-items: center; gap: 16px; }
+#saludo { color: var(--suave); font-size: .95rem; }
+
+.enlace {
+  background: none; border: 0; color: var(--acento);
+  font-size: .9rem; font-weight: 600; cursor: pointer; text-decoration: none;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.tarjeta-panel {
+  background: #fff;
+  border: 1.5px solid var(--linea);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.tarjeta-panel h2 { margin-top: 0; font-size: 1.3rem; margin-bottom: 4px; }
+.ayuda { font-size: .85rem; color: var(--suave); margin-top: 0; margin-bottom: 16px; }
+
+.lista-admin { display: flex; flex-direction: column; gap: 10px; max-height: 480px; overflow-y: auto; }
+
+.fila-admin {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 12px; border: 1px solid var(--linea); border-radius: 8px;
+}
+
+.fila-admin .info { display: flex; flex-direction: column; gap: 2px; }
+.fila-admin .titulo-item { font-weight: 600; font-size: .95rem; }
+.fila-admin .sub-item { font-size: .82rem; color: var(--suave); }
+
+.btn-eliminar {
+  background: #fff; color: var(--error); border: 1.5px solid var(--error);
+  padding: 6px 12px; border-radius: 6px; font-weight: 600; cursor: pointer;
+  font-size: .85rem; transition: background 0.2s, color 0.2s;
+}
+.btn-eliminar:hover { background: var(--error); color: #fff; }
+
+.vacio { color: var(--suave); font-size: .92rem; }
+.aviso { min-height: 1.3em; margin: 20px 0 0; font-size: .95rem; color: var(--ok); text-align: center; }

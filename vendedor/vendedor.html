@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>BinaryShop | Panel de Vendedor</title>
+  <link rel="stylesheet" href="vendedor.css">
+</head>
+<body>
+  <div class="pagina">
+    <header class="barra">
+      <div class="logo"><span class="logo-bits">01</span><span>BinaryShop</span></div>
+      <div class="acciones">
+        <span id="saludo"></span>
+        <a href="../catalogo/catalogo.html" class="enlace">Ver Catálogo</a>
+        <button type="button" id="btnSalir" class="enlace">Cerrar sesión</button>
+      </div>
+    </header>
+
+    <main class="vendedor-grid">
+      <!-- Formulario para publicar producto -->
+      <section class="tarjeta-panel">
+        <h2>Publicar Nuevo Producto</h2>
+        <form id="formProducto" novalidate>
+          <div class="campo">
+            <label for="nombreProd">Nombre del Producto</label>
+            <input type="text" id="nombreProd" placeholder="Ej. Audífonos Bluetooth">
+            <p class="error"></p>
+          </div>
+          <div class="campo">
+            <label for="precioProd">Precio ($)</label>
+            <input type="number" id="precioProd" step="0.01" min="0.01" placeholder="Ej. 29.99">
+            <p class="error"></p>
+          </div>
+          <div class="campo">
+            <label for="imagenProd">Cargar Imagen (Archivo o URL)</label>
+            <input type="file" id="imagenFile" accept="image/*">
+            <p class="o-texto">o pega una URL de imagen:</p>
+            <input type="url" id="imagenUrl" placeholder="https://ejemplo.com/imagen.jpg">
+            <p class="error"></p>
+          </div>
+          <button type="submit" class="boton">Publicar Producto</button>
+          <p id="mensajeProd" class="mensaje" role="status"></p>
+        </form>
+      </section>
+
+      <!-- Historial de publicaciones del vendedor -->
+      <section class="tarjeta-panel">
+        <h2>Mis Publicaciones</h2>
+        <div id="listaMisProductos" class="lista-mis-productos"></div>
+        <p id="sinMisProductos" class="vacio" hidden>Aún no has publicado ningún producto.</p>
+      </section>
+    </main>
+  </div>
+  <script src="vendedor.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>BinaryShop | Panel de Administración</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="pagina">
+    <header class="barra">
+      <div class="logo"><span class="logo-bits">01</span><span>BinaryShop</span></div>
+      <div class="acciones">
+        <span id="saludo"></span>
+        <a href="../catalogo/catalogo.html" class="enlace">Ver Catálogo</a>
+        <button type="button" id="btnSalir" class="enlace">Cerrar sesión</button>
+      </div>
+    </header>
+
+    <main class="admin-grid">
+      <!-- Gestión de Usuarios -->
+      <section class="tarjeta-panel">
+        <h2>Gestión de Usuarios</h2>
+        <p class="ayuda">Elimina usuarios registrados en la plataforma.</p>
+        <div id="listaUsuarios" class="lista-admin"></div>
+        <p id="sinUsuarios" class="vacio" hidden>No hay usuarios registrados.</p>
+      </section>
+
+      <!-- Gestión de Publicaciones -->
+      <section class="tarjeta-panel">
+        <h2>Gestión de Publicaciones</h2>
+        <p class="ayuda">Remueve productos publicados por vendedores.</p>
+        <div id="listaProductos" class="lista-admin"></div>
+        <p id="sinProductos" class="vacio" hidden>No hay productos de vendedores publicados.</p>
+      </section>
+    </main>
+
+    <p id="avisoAdmin" class="aviso" role="status"></p>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>
