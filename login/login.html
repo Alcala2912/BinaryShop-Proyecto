@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>BinaryShop | Acceso</title>
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+<main class="pagina">
+
+  <header class="marca">
+    <div class="logo"><span class="logo-bits">01</span><span>BinaryShop</span></div>
+    <p class="lema">Compra y vende de forma rápida y segura.</p>
+  </header>
+
+  <section>
+    <div class="pestanas" role="tablist">
+      <button type="button" role="tab" id="tabLogin" class="activa" aria-selected="true">Iniciar sesión</button>
+      <button type="button" role="tab" id="tabRegistro" aria-selected="false">Registrarse</button>
+    </div>
+
+    <!-- LOGIN -->
+    <form id="formLogin" novalidate>
+      <div class="campo">
+        <label for="loginNick">Nickname</label>
+        <input id="loginNick" autocomplete="username">
+        <p class="error"></p>
+      </div>
+      <div class="campo">
+        <label for="loginClave">Contraseña</label>
+        <input type="password" id="loginClave" autocomplete="current-password">
+        <p class="error"></p>
+      </div>
+      <div class="campo">
+        <label for="loginRol">Entrar como</label>
+        <select id="loginRol">
+          <option value="comprador">Comprador</option>
+          <option value="vendedor">Vendedor</option>
+          <option value="administrador">Administrador</option>
+        </select>
+      </div>
+      <button type="submit" class="boton">Entrar</button>
+      <p class="mensaje" role="status"></p>
+      <p class="ayuda">Usuarios de prueba: <b>comprador1</b>, <b>vendedor1</b> (clave <b>1234Abc</b>) y <b>admin</b> (clave <b>admin123</b>).</p>
+    </form>
+
+    <!-- REGISTRO -->
+    <form id="formRegistro" novalidate hidden>
+      <div class="fila">
+        <div class="campo">
+          <label for="regNombre">Nombre</label>
+          <input id="regNombre" autocomplete="given-name">
+          <p class="error"></p>
+        </div>
+        <div class="campo">
+          <label for="regApellido">Apellido</label>
+          <input id="regApellido" autocomplete="family-name">
+          <p class="error"></p>
+        </div>
+      </div>
+      <div class="campo">
+        <label for="regDireccion">Dirección</label>
+        <input id="regDireccion" autocomplete="street-address">
+        <p class="error"></p>
+      </div>
+      <div class="fila">
+        <div class="campo">
+          <label for="regNick">Nickname</label>
+          <input id="regNick" autocomplete="username">
+          <p class="error"></p>
+        </div>
+        <div class="campo">
+          <label for="regClave">Contraseña</label>
+          <input type="password" id="regClave" autocomplete="new-password">
+          <p class="error"></p>
+        </div>
+      </div>
+
+      <fieldset>
+        <legend>Quiero registrarme como</legend>
+        <label class="opcion"><input type="radio" name="regRol" value="comprador" checked> Comprador</label>
+        <label class="opcion"><input type="radio" name="regRol" value="vendedor"> Vendedor</label>
+        <p class="ayuda">¿Ya eres comprador y quieres vender? Usa tu mismo nickname y contraseña, y elige Vendedor.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Datos bancarios</legend>
+        <div class="campo">
+          <label for="regTarjeta">Número de tarjeta</label>
+          <input id="regTarjeta" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19" autocomplete="cc-number">
+          <p class="error"></p>
+        </div>
+        <div class="fila">
+          <div class="campo">
+            <label for="regVence">Vencimiento</label>
+            <input id="regVence" inputmode="numeric" placeholder="MM/AA" maxlength="5" autocomplete="cc-exp">
+            <p class="error"></p>
+          </div>
+          <div class="campo">
+            <label for="regCvv">CVV</label>
+            <input type="password" id="regCvv" inputmode="numeric" maxlength="4" autocomplete="cc-csc">
+            <p class="error"></p>
+          </div>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="boton">Crear cuenta</button>
+      <p class="mensaje" role="status"></p>
+    </form>
+  </section>
+
+</main>
+<script src="login.js"></script>
+</body>
+</html>
