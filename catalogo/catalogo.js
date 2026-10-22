@@ -172,6 +172,20 @@ function pintarCarrito() {
 function iniciar() {
   $("saludo").textContent = `Hola, ${sesion.nombre} (${sesion.rol})`;
 
+  // Lógica para mostrar enlace al panel si es vendedor o administrador
+  const btnPanel = $("btnPanel");
+  if (sesion.rol === "vendedor") {
+    btnPanel.textContent = "Panel Vendedor";
+    btnPanel.href = "../vendedor/vendedor.html";
+    btnPanel.hidden = false;
+  } else if (sesion.rol === "administrador") {
+    btnPanel.textContent = "Panel Admin";
+    btnPanel.href = "../admin/admin.html";
+    btnPanel.hidden = false;
+  } else {
+    btnPanel.hidden = true;
+  }
+
   // Abrir / cerrar el desplegable del carrito
   $("btnCarrito").addEventListener("click", (e) => {
     e.stopPropagation();
@@ -179,6 +193,7 @@ function iniciar() {
     $("desplegable").hidden = !abrir;
     $("btnCarrito").setAttribute("aria-expanded", abrir);
   });
+  
   document.addEventListener("click", (e) => {
     if (!$("desplegable").contains(e.target)) {
       $("desplegable").hidden = true;
@@ -192,7 +207,6 @@ function iniciar() {
   });
 
   $("btnFinalizar").addEventListener("click", () => {
-    // Aquí iría el formulario de pago con los datos bancarios.
     avisar("Compra simulada: tu pedido fue procesado.");
     guardarCarrito([]);
     pintarCarrito();
@@ -201,7 +215,7 @@ function iniciar() {
 
   $("btnSalir").addEventListener("click", () => {
     sessionStorage.removeItem("bs_sesion");
-    window.location.href = "../index.html";
+    window.location.href = "../index.html"; // Ajusta la ruta a tu login según la estructura
   });
 
   $("buscador").addEventListener("input", pintarCatalogo);
