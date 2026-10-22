@@ -112,8 +112,8 @@ function pintarCatalogo() {
     const btnComprar = crear("button", "boton secundario", "Comprar de inmediato");
     btnComprar.type = "button";
     btnComprar.addEventListener("click", () => {
-      // Aquí iría el formulario de pago (procesamiento de compra).
-      avisar(`Compra simulada: ${p.nombre} por ${dinero(p.precio)}.`);
+      agregarAlCarrito(p.id);
+      window.location.href = "../pago/pago.html";
     });
 
     botones.append(btnAgregar, btnComprar);
@@ -207,10 +207,12 @@ function iniciar() {
   });
 
   $("btnFinalizar").addEventListener("click", () => {
-    avisar("Compra simulada: tu pedido fue procesado.");
-    guardarCarrito([]);
-    pintarCarrito();
-    $("desplegable").hidden = true;
+    const carrito = leerCarrito();
+    if (carrito.length === 0) {
+      avisar("El carrito está vacío.", "mal");
+      return;
+    }
+    window.location.href = "../pago/pago.html";
   });
 
   $("btnSalir").addEventListener("click", () => {
