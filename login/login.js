@@ -95,9 +95,9 @@ $("formLogin").addEventListener("submit", (e) => {
   mostrarMensaje(form, `Bienvenido, ${usuario.nombre}. Entraste como ${rol}.`, "ok");
 
   const destinos = {
-    comprador: "./catalogo/catalogo.html",
-    vendedor: "./vendedor/vendedor.html",
-    administrador: "./admin/admin.html"
+    comprador: "catalogo/catalogo.html",
+    vendedor: "vendedor/vendedor.html",
+    administrador: "admin/admin.html"
   };
   if (destinos[rol]) setTimeout(() => (window.location.href = destinos[rol]), 800);
 });
