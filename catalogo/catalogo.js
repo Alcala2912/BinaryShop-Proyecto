@@ -201,7 +201,7 @@ function iniciar() {
 
   $("btnSalir").addEventListener("click", () => {
     sessionStorage.removeItem("bs_sesion");
-    window.location.href = "../login/login.html";
+    window.location.href = "../index.html";
   });
 
   $("buscador").addEventListener("input", pintarCatalogo);
