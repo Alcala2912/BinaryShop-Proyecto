@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>BinaryShop | Formulario de Pago</title>
+  <link rel="stylesheet" href="pago.css">
+</head>
+<body>
+  <div class="pagina">
+    <header class="barra">
+      <div class="logo"><span class="logo-bits">01</span><span>BinaryShop</span></div>
+      <div class="acciones">
+        <span id="saludo"></span>
+        <a href="../catalogo/catalogo.html" class="enlace">Volver al Catálogo</a>
+        <button type="button" id="btnSalir" class="enlace">Cerrar sesión</button>
+      </div>
+    </header>
+
+    <main class="pago-grid">
+      <!-- Formulario de Pago -->
+      <section class="tarjeta-panel">
+        <h2>Procesamiento de Compra</h2>
+        <p class="ayuda">Verifica y completa tus datos bancarios para procesar la transacción.</p>
+
+        <form id="formPago" novalidate>
+          <div class="campo">
+            <label for="pagoTitular">Nombre del titular</label>
+            <input type="text" id="pagoTitular" placeholder="Ej. Ana Pérez">
+            <p class="error"></p>
+          </div>
+
+          <div class="campo">
+            <label for="pagoTarjeta">Número de tarjeta</label>
+            <input type="text" id="pagoTarjeta" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19" autocomplete="cc-number">
+            <p class="error"></p>
+          </div>
+
+          <div class="fila">
+            <div class="campo">
+              <label for="pagoVence">Vencimiento</label>
+              <input type="text" id="pagoVence" inputmode="numeric" placeholder="MM/AA" maxlength="5" autocomplete="cc-exp">
+              <p class="error"></p>
+            </div>
+            <div class="campo">
+              <label for="pagoCvv">CVV</label>
+              <input type="password" id="pagoCvv" inputmode="numeric" maxlength="4" autocomplete="cc-csc">
+              <p class="error"></p>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="pagoDireccion">Dirección de envío</label>
+            <input type="text" id="pagoDireccion" placeholder="Dirección completa de entrega">
+            <p class="error"></p>
+          </div>
+
+          <button type="submit" id="btnPagar" class="boton">Confirmar Pago</button>
+          <p id="mensajePago" class="mensaje" role="status"></p>
+        </form>
+      </section>
+
+      <!-- Resumen del Pedido -->
+      <section class="tarjeta-panel">
+        <h2>Resumen del Pedido</h2>
+        <div id="resumenProductos" class="resumen-lista"></div>
+        <div class="resumen-total">
+          <span>Total a pagar:</span>
+          <strong id="montoTotal">$0.00</strong>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="pago.js"></script>
+</body>
+</html>
