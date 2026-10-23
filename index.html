@@ -20,29 +20,22 @@
     </div>
 
     <!-- LOGIN -->
-    <form id="formLogin" novalidate>
-      <div class="campo">
-        <label for="loginNick">Nickname</label>
-        <input id="loginNick" autocomplete="username">
-        <p class="error"></p>
-      </div>
-      <div class="campo">
-        <label for="loginClave">Contraseña</label>
-        <input type="password" id="loginClave" autocomplete="current-password">
-        <p class="error"></p>
-      </div>
-      <div class="campo">
-        <label for="loginRol">Entrar como</label>
-        <select id="loginRol">
-          <option value="comprador">Comprador</option>
-          <option value="vendedor">Vendedor</option>
-          <option value="administrador">Administrador</option>
-        </select>
-      </div>
-      <button type="submit" class="boton">Entrar</button>
-      <p class="mensaje" role="status"></p>
-      <p class="ayuda">Usuarios de prueba: <b>comprador1</b>, <b>vendedor1</b> (clave <b>1234Abc</b>) y <b>admin</b> (clave <b>admin123</b>).</p>
-    </form>
+<form id="formLogin" novalidate>
+  <div class="campo">
+    <label for="loginNick">Nickname</label>
+    <input id="loginNick" autocomplete="username">
+    <p class="error"></p>
+  </div>
+  <div class="campo">
+    <label for="loginClave">Contraseña</label>
+    <input type="password" id="loginClave" autocomplete="current-password">
+    <p class="error"></p>
+  </div>
+  
+  <button type="submit" class="boton">Entrar</button>
+  <p class="mensaje" role="status"></p>
+  <p class="ayuda">Usuarios de prueba: <b>comprador1</b>, <b>vendedor1</b> (clave <b>1234Abc</b>) y <b>admin</b> (clave <b>admin123</b>).</p>
+</form>
 
     <!-- REGISTRO -->
     <form id="formRegistro" novalidate hidden>
