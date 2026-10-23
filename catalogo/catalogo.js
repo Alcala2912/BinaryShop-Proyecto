@@ -28,7 +28,6 @@ const PRODUCTOS_BASE = [
 ];
 
 // Los productos que publique el vendedor se guardan en localStorage con la clave "bs_productos"
-// con este formato: { id, nombre, precio, imagen }  (imagen = ruta o data URL)
 function obtenerProductos() {
   return [...PRODUCTOS_BASE, ...leerJSON(localStorage.getItem("bs_productos"), [])];
 }
