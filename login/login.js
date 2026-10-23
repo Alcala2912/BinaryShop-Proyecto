@@ -78,7 +78,9 @@ $("formLogin").addEventListener("submit", (e) => {
   const form = e.target;
   limpiar(form);
 
-  const nick = $("loginNick"), clave = $("loginClave"), rol = $("loginRol").value;
+  const nick = $("loginNick");
+  const clave = $("loginClave");
+  
   const okNick = marcarError(nick, nick.value.trim() ? "" : "Escribe tu nickname.");
   const okClave = marcarError(clave, clave.value ? "" : "Escribe tu contraseña.");
   if (!okNick || !okClave) return;
@@ -87,8 +89,16 @@ $("formLogin").addEventListener("submit", (e) => {
   if (!usuario || usuario.clave !== clave.value) {
     return mostrarMensaje(form, "Nickname o contraseña incorrectos.", "mal");
   }
-  if (!usuario.roles.includes(rol)) {
-    return mostrarMensaje(form, `Tu cuenta no tiene el rol de ${rol}.`, "mal");
+
+  // Determinación implícita del rol según los roles de la cuenta
+  // Prioridad: administrador > vendedor > comprador
+  let rol = "comprador";
+  if (usuario.roles.includes("administrador")) {
+    rol = "administrador";
+  } else if (usuario.roles.includes("vendedor")) {
+    rol = "vendedor";
+  } else if (usuario.roles.includes("comprador")) {
+    rol = "comprador";
   }
 
   sessionStorage.setItem(CLAVE_SESION, JSON.stringify({ nick: usuario.nick, nombre: usuario.nombre, rol }));
@@ -99,6 +109,7 @@ $("formLogin").addEventListener("submit", (e) => {
     vendedor: "vendedor/vendedor.html",
     administrador: "admin/admin.html"
   };
+
   if (destinos[rol]) setTimeout(() => (window.location.href = destinos[rol]), 800);
 });
 
@@ -155,7 +166,6 @@ $("formRegistro").addEventListener("submit", (e) => {
   setTimeout(() => {
     form.reset();
     $("loginNick").value = nickRegistrado;
-    $("loginRol").value = rol;
     mostrarPestana("login");
   }, 1400);
 });
